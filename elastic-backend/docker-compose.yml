@@ -10,6 +10,7 @@ services:
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
       - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms256m -Xmx256m
       - "http.cors.allow-origin='*'"
       - "http.cors.enabled=true"
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
@@ -33,6 +34,7 @@ services:
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
       - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms256m -Xmx256m
       - "http.cors.allow-origin='*'"
       - "http.cors.enabled=true"
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
