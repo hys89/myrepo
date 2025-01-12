@@ -2,7 +2,7 @@ services:
   esnode1:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
     container_name: esnode1
-    mem_limit: 256m
+    mem_limit: 512m
     environment:
       - node.name=esnode1
       - cluster.name=cv-cluster
@@ -10,7 +10,7 @@ services:
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
       - xpack.security.enabled=false
-      - ES_JAVA_OPTS=-Xms256m -Xmx256m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
       - "http.cors.allow-origin='*'"
       - "http.cors.enabled=true"
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
@@ -26,7 +26,7 @@ services:
   esnode2:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
     container_name: esnode2
-    mem_limit: 256m
+    mem_limit: 512m
     environment:
       - node.name=esnode2
       - cluster.name=cv-cluster
@@ -34,7 +34,7 @@ services:
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
       - xpack.security.enabled=false
-      - ES_JAVA_OPTS=-Xms256m -Xmx256m
+      - ES_JAVA_OPTS=-Xms128m -Xmx128m
       - "http.cors.allow-origin='*'"
       - "http.cors.enabled=true"
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
