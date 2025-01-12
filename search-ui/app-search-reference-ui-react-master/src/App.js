@@ -16,8 +16,6 @@ import {
 import { Layout } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
-require('dotenv').config();
-
 const connector = new ElasticsearchAPIConnector({
   host: process.env.ELASTICSEARCH_HOST || "http://localhost:9200",  // Default to localhost if env variable is not set
   index: "cv-transcriptions"
