@@ -1,0 +1,58 @@
+services:
+  esnode1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+    container_name: esnode1
+    environment:
+      - node.name=esnode1
+      - cluster.name=cv-cluster
+      - discovery.seed_hosts=esnode1,esnode2
+      - cluster.initial_master_nodes=esnode1,esnode2
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - "http.cors.allow-origin='*'"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
+      - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization,Access-Control-Allow-Headers,Accept,x-elastic-client-meta"
+      - "http.cors.allow-credentials=true"
+    ports:
+      - "9200:9200"
+    networks:
+      - elastic_network
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+
+  esnode2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+    container_name: esnode2
+    environment:
+      - node.name=esnode2
+      - cluster.name=cv-cluster
+      - discovery.seed_hosts=esnode1,esnode2
+      - cluster.initial_master_nodes=esnode1,esnode2
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - "http.cors.allow-origin='*'"
+      - "http.cors.enabled=true"
+      - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
+      - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization,Access-Control-Allow-Headers,Accept,x-elastic-client-meta"
+      - "http.cors.allow-credentials=true"
+    networks:
+      - elastic_network
+    volumes:
+      - esdata2:/usr/share/elasticsearch/data
+
+networks:
+  elastic_network:
+    external: true  # Use the shared network
+
+volumes:
+  esdata1:
+    driver: local
+  esdata2:
+    driver: local
+
+#  docker network create elastic_network
+# Run: docker-compose -f docker-compose.yml up -d
+# Check health: curl -X GET "localhost:9200/_cluster/health?pretty"

@@ -1,0 +1,18 @@
+services:
+  search-ui:
+    image: node:22
+    container_name: search-ui
+    working_dir: /usr/src/app
+    volumes:
+      - ./app-search-reference-ui-react-master:/usr/src/app  # Mount the app codes
+    command: sh -c "yarn install && yarn start"  # Install dependencies and start the dev server
+    ports:
+      - "3000:3000"  # Map port 3000 for the React app
+    networks:
+      - elastic_network
+
+networks:
+  elastic_network:
+    external: true  # Use the shared network
+
+# docker-compose -f docker-compose.yml up -d
