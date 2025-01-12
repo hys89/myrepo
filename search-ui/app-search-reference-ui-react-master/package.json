@@ -11,8 +11,7 @@
     "react-scripts": "5.0.0"
   },
   "devDependencies": {
-    "rewire": "^6.0.0",
-    "dotenv": "^10.0.0"
+    "rewire": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
