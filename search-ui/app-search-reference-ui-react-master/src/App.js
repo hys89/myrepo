@@ -4,7 +4,6 @@ import ElasticsearchAPIConnector from "@elastic/search-ui-elasticsearch-connecto
 
 import {
   ErrorBoundary,
-  Facet,
   SearchProvider,
   SearchBox,
   Results,
