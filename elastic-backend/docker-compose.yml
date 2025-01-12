@@ -22,6 +22,7 @@ services:
         hard: -1
     ports:
       - "9200:9200"
+      - "9300:9300"
     networks:
       - elastic_network
     volumes:
@@ -49,6 +50,9 @@ services:
       memlock:
         soft: -1
         hard: -1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
     networks:
       - elastic_network
     volumes:
