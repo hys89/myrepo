@@ -6,6 +6,7 @@ This guide provides instructions to set up the development environment for this 
 
 - Python 3.11
 - `pip` (for Python package management)
+- Docker
 
 ## 1. Clone the Repository
 
@@ -38,4 +39,8 @@ Setup the Python virtual environment `.venv` by executing the `setup_venv.bat` i
 1. Activate the virtual environment `.venv`
 2. Start up the ASR API server locally.
 3. Run `python ./asr/cv-decode.py`
+4. Results will be saved into the same file `cv-valid-dev.csv`
 
+## 3. Web application for end users to search on cv-valid-dev.csv
+1. Activate the virtual environment `.venv`
+2. In a terminal, navigate to the `elastic-backend` folder
