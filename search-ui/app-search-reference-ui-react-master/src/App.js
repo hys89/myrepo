@@ -17,7 +17,7 @@ import { Layout } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 const connector = new ElasticsearchAPIConnector({
-  host: process.env.ELASTICSEARCH_HOST || "http://localhost:9200",  // Default to localhost if env variable is not set
+  host: "http://ec2-47-129-205-236.ap-southeast-1.compute.amazonaws.com:9200",
   index: "cv-transcriptions"
 });
 
