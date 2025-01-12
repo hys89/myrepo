@@ -5,6 +5,7 @@ services:
     environment:
       - node.name=esnode1
       - cluster.name=cv-cluster
+      - network.host=0.0.0.0
       - discovery.seed_hosts=esnode1,esnode2
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
@@ -33,6 +34,7 @@ services:
     environment:
       - node.name=esnode2
       - cluster.name=cv-cluster
+      - network.host=0.0.0.0
       - discovery.seed_hosts=esnode1,esnode2
       - cluster.initial_master_nodes=esnode1,esnode2
       - bootstrap.memory_lock=true
