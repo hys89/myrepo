@@ -18,7 +18,7 @@ import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 const connector = new ElasticsearchAPIConnector({
   // host: "http://ec2-47-129-205-236.ap-southeast-1.compute.amazonaws.com:9200",
-  host: "http://esnode1:9200",
+  host: "http://172.18.0.2:9200",
   index: "cv-transcriptions"
 });
 
