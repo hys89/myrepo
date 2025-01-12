@@ -2,7 +2,7 @@ services:
   esnode1:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
     container_name: esnode1
-    mem_limit: 512m
+    mem_limit: 256m
     environment:
       - node.name=esnode1
       - cluster.name=cv-cluster
@@ -26,7 +26,7 @@ services:
   esnode2:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
     container_name: esnode2
-    mem_limit: 512m
+    mem_limit: 256m
     environment:
       - node.name=esnode2
       - cluster.name=cv-cluster
