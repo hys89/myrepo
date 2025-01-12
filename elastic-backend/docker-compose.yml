@@ -15,6 +15,10 @@ services:
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
       - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization,Access-Control-Allow-Headers,Accept,x-elastic-client-meta"
       - "http.cors.allow-credentials=true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     ports:
       - "9200:9200"
     networks:
@@ -38,6 +42,10 @@ services:
       - "http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE"
       - "http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization,Access-Control-Allow-Headers,Accept,x-elastic-client-meta"
       - "http.cors.allow-credentials=true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     networks:
       - elastic_network
     volumes:
