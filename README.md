@@ -56,4 +56,4 @@ Setup the Python virtual environment `.venv` by executing the `setup_venv.bat` i
 4. Visit http://localhost:3000/ to view the UI.
 
 **<u>AWS Deployment</u>**
-1. URL: `http://ec2-54-151-188-69.ap-southeast-1.compute.amazonaws.com:3000/`
+1. URL: [http://ec2-13-229-106-122.ap-southeast-1.compute.amazonaws.com:3000/](http://ec2-13-229-106-122.ap-southeast-1.compute.amazonaws.com:3000/)
